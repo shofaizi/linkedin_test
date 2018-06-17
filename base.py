@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
 
 
 class Base:
@@ -7,6 +9,19 @@ class Base:
     driver = webdriver.Chrome('/Users/Sho/Desktop/linkedin_test/chromedriver')
     longWait = 5
     shortWait = 1
+
+
+    def _sendKeys(self, element, value):
+
+        element.clear()
+        element.send_keys(value)
+        element.send_keys(Keys.TAB)
+
+
+    def _clickSubmit(self, element):
+
+        element.click()
+
 
     def setUp(self):
 
