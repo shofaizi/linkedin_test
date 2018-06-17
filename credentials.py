@@ -1,1 +1,2 @@
-USER_EMAIL = 'sfaizi1@outlook.com'
+USER_EMAIL = ''
+USER_PASS = ''
