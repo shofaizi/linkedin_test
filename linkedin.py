@@ -5,8 +5,8 @@ def linkedIn_testSuite():
     """
     NOTE:
         This test will run through the Linkedin's platform and test its functionality. It will go through the login, home,
-        messaging, profile and jobs pages. This test will look out for API responses when for instance an action triggered
-        by the client results in receiving a message.
+        messaging, profile and jobs pages. This test will also look out for any API responses that will trigger the client
+        to alert the user to changes.
     """
 
     loginPage = LoginPage()
@@ -14,8 +14,10 @@ def linkedIn_testSuite():
     loginPage.setUp()
 
     loginPage.setUserEmail(USER_EMAIL)
-    loginPage.setUserPass(USER_PASS)
-    homePage = loginPage.submitLogin()
+
+    homePage = loginPage.setUserPass(USER_PASS)
+    homePage.searchUser("Alison Dsa")
+    homePage._clickSubmit()
 
 
 

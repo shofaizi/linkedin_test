@@ -2,20 +2,33 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-
 class Base:
 
     url = "http://www.linkedin.com"
     driver = webdriver.Chrome('/Users/Sho/Desktop/linkedin_test/chromedriver')
-    longWait = 5
+    longWait = 3
     shortWait = 1
+
+
+    def _returnInstance(self):
+
+        if "/feed" in self.driver.current_url:
+            return Home()
+        elif "/mynetwork" in self.driver.current_url:
+            return Network()
+        elif "/jobs" in self.driver.current_url:
+            return Job()
+        elif "/messaging" in self.driver.current_url:
+            return Messaging()
+        elif "/in/" in self.driver.current_url:
+            return Profile()
 
 
     def _sendKeys(self, element, value):
 
         element.clear()
         element.send_keys(value)
-        element.send_keys(Keys.TAB)
+        element.send_keys(Keys.RETURN)
 
 
     def _clickSubmit(self, element):
@@ -35,3 +48,10 @@ class Base:
         self.driver.close()
         print("Closing driver now...")
         self.driver.quit()
+
+
+from messaging import Messaging
+from network import Network
+from job import Job
+from home import Home
+from profile import Profile
