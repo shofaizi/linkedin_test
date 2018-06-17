@@ -6,6 +6,6 @@ def linkedIn_testSuite():
     base = Base()
 
     base.setUp()
-
+    # base.tearDown()
 
 linkedIn_testSuite()
