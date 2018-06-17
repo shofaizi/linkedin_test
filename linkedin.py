@@ -1,14 +1,11 @@
-from base import LoginPage
+from base import Base
 from selenium import webdriver
-from credentials import USER_EMAIL
 
 def linkedIn_testSuite():
 
-    loginPage = LoginPage()
+    base = Base()
 
-    loginPage.setUp()
-
-    loginPage.setUserEmail(USER_EMAIL)
-
+    base.setUp()
+    # base.tearDown()
 
 linkedIn_testSuite()
