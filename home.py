@@ -1,5 +1,6 @@
 from base import Base
 from selenium.webdriver.common.by import By
+from profile import Profile
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 import time
@@ -25,28 +26,21 @@ class Home(Base):
         inputFields = self.driver.find_elements(By.TAG_NAME, 'input')
 
         self._sendKeys(inputFields[0], value)
-        return self._returnInstance()
+        return Result()
 
 
-    def connectUser(self):
+    # def connectUser(self, value):
+    #
+    #     time.sleep(3)
+    #
+    #     userLink = self.driver.find_element_by_class_name('search-result__result-link')
+    #     userLink.click()
+    #     return Profile()
 
-        body = self.driver.find_element_by_tag_name("body")
-        time.sleep(3)
-        bodyDiv = body.find_elements_by_tag_name('div')
-        print("body divs: ", len(bodyDiv))
-        list = []
-        newlist = []
-
-        for div in bodyDiv:
-            if div.get_attribute('class') == 'ember-view' and "ember" in div.get_attribute("id"):
-                list.append(div)
-
-        applicationOutlet = list[2].find_element_by_class_name("application-outlet")
-        div = applicationOutlet.find_element_by_tag_name('div')
-        div = div.find_elements_by_tag_name('div')[1]
-
-        print(div)
 
     # def submitLogin(self):
     #     self._clickSubmit((self._LOGIN_SUBMIT))
     #     return self._returnInstance()
+
+
+from result import Result

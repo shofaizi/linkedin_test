@@ -1,6 +1,9 @@
 from loginPage import LoginPage
 from credentials import USER_EMAIL, USER_PASS
 
+note = "Hello, my name is Shoaib Faizi and I am developing an automated test suite " \
+       "to make sure Linkedin's features work right. Have a good day."
+
 def linkedIn_testSuite():
     """
     NOTE:
@@ -16,9 +19,10 @@ def linkedIn_testSuite():
     loginPage.setUserEmail(USER_EMAIL)
 
     homePage = loginPage.setUserPass(USER_PASS)
-    homePage.searchUser("Alison Dsa")
-    # homePage._clickSubmit()
-    homePage.connectUser()
+
+    resultPage = homePage.searchUser("Alison Dsa")
+    profilePage = resultPage.openProfile()
+    profilePage.connectUser(note)
 
 
 linkedIn_testSuite()

@@ -12,16 +12,24 @@ class Base:
 
     def _returnInstance(self):
 
-        if "/feed" in self.driver.current_url:
+        if "/feed/" in self.driver.current_url:
+            print("Returning home instance")
             return Home()
-        elif "/mynetwork" in self.driver.current_url:
+        elif "/mynetwork/" in self.driver.current_url:
+            print("Returning network instance")
             return Network()
-        elif "/jobs" in self.driver.current_url:
+        elif "/jobs/" in self.driver.current_url:
+            print("Returning jobs instance")
             return Job()
-        elif "/messaging" in self.driver.current_url:
+        elif "/messaging/" in self.driver.current_url:
+            print("Returning messaging instance")
             return Messaging()
         elif "/in/" in self.driver.current_url:
+            print("Returning profile instance")
             return Profile()
+        elif "/search/results/" in self.driver.current_url:
+            print("Returning result instance")
+            return Result()
 
 
     def _sendKeys(self, element, value):
@@ -55,3 +63,4 @@ from network import Network
 from job import Job
 from home import Home
 from profile import Profile
+from result import Result
