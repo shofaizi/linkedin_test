@@ -26,6 +26,7 @@ class Profile(Base):
         # sendButton.click()
         noteWrapper[1].click()
         time.sleep(2)
+        self._returnInstance()
 
 
     def getInvitationResult(self):
