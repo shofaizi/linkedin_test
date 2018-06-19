@@ -17,8 +17,8 @@ def linkedIn_testSuite():
 
     homePage = loginPage.setUserPass(USER_PASS)
     homePage.searchUser("Alison Dsa")
-    homePage._clickSubmit()
-
+    # homePage._clickSubmit()
+    homePage.connectUser()
 
 
 linkedIn_testSuite()
