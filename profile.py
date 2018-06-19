@@ -35,3 +35,7 @@ class Profile(Base):
             This method will get that value so that it can be used to validate in the linkedin.py script
         """
 
+        div = self.driver.find_element_by_class_name('pv-top-card-v2-section__actions')
+        button = div.find_elements_by_tag_name('button')[0]
+        span = button.find_elements_by_class_name('pv-s-profile-actions__label')
+        return span.text
