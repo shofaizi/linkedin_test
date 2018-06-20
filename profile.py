@@ -11,7 +11,6 @@ class Profile(Base):
     _H1 = (By.TAG_NAME, 'h1')
     _BUTTONS = (By.TAG_NAME, 'button')
     _EXPAND_BIO_BUTTON = (By.CLASS_NAME, 'pv-profile-section__card-action-bar')
-    # _ADD_POSITION_BUTTON = (By.CLASS_NAME, 'pv-profile-section__header-add-action')
     _ANCHOR_TAGS = (By.TAG_NAME, 'a')
     _ME_LINK = (By.ID, 'nav-settings__dropdown-trigger')
     _VIEW_PROFILE_BUTTON = (By.CLASS_NAME, 'button-tertiary-medium')
@@ -22,6 +21,15 @@ class Profile(Base):
     _EXPERIENCE_MONTH = (By.ID, 'position-start-month')
     _EXPERIENCE_YEAR = (By.ID, 'position-start-year')
     _EXPERIENCE_DESCRIPTION = (By.ID, 'position-description')
+
+    _VOLUNTEER_ORGANIZATION = (By.NAME, "companyName")
+    _VOLUNTEER_ROLE = (By.NAME, "role")
+    _VOLUNTEER_CAUSE = (By.ID, "volunteer-experience-cause")
+    _VOLUNTEER_START_MONTH = (By.ID, "volunteer-experience-start-month")
+    _VOLUNTEER_START_YEAR = (By.ID, "volunteer-experience-start-year")
+    _VOLUNTEER_CURRENTLY_WORKING = (By.ID, "volunteer-experience-currently-volunteers-here")
+    _VOLUNTEER_DESCRIPTION = (By.ID, "volunteer-experience-description")
+
 
 
     myProfileUrl = 'https://www.linkedin.com/in/shoaibfaizi/'
@@ -115,44 +123,15 @@ class Profile(Base):
 
     def open_addExperience(self):
 
-        # addButton = WebDriverWait(self.driver, self.longWait).until(
-        #     EC.visibility_of_element_located((self._ADD_POSITION_BUTTON))
-        # )
-
-        time.sleep(3)
-        profileDetailsDiv = self.driver.find_element_by_class_name('profile-detail')
-        profileDetailsDiv.find
-        anchorTags = self.driver.find_elements_by_tag_name('a')
-
-        print(anchorTags)
-
-        addButton = list(filter(lambda x: print(x.get_attribute('data-control-name')), anchorTags))
-
-        print('add buttons: ', addButton)
-        addButton[0].click()
+        self.driver.get('https://www.linkedin.com/in/shoaibfaizi/edit/position/new/')
 
 
     def open_addAccomplishment(self, value):
 
-        buttons = WebDriverWait(self.driver, self.longWait).until(
-            EC.visibility_of_all_elements_located((self._BUTTONS))
-        )
-
-        expandList = list(filter(lambda x: x.get_attribute('data-control-name') == 'add_accomplishment', buttons))
-        assert len(expandList) == 1
-
-        expandList[0].click()
-
-        anchorTags = WebDriverWait(self.driver, self.longWait).until(
-            EC.visibility_of_all_elements_located((self._ANCHOR_TAGS))
-        )
-
-        value = "add_" + str(value.lower())
-
-        links = list(filter(lambda x: x.get_attribute('data-control-name') == 'add_accomplishment'))
+        self.driver.get('https://www.linkedin.com/in/shoaibfaizi/edit/volunteer-experience/new/')
 
 
-    def setTitle(self, value):
+    def setExpTitle(self, value):
 
         titleField = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._EXPERIENCE_TITLE))
@@ -161,7 +140,7 @@ class Profile(Base):
         self._sendKeys(titleField, value)
 
 
-    def setCompany(self, value):
+    def setExpCompany(self, value):
 
         companyField = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._EXPERIENCE_COMPANY))
@@ -171,7 +150,7 @@ class Profile(Base):
         time.sleep(1)
 
 
-    def setLocation(self, value):
+    def setExpLocation(self, value):
 
         locationField = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._EXPERIENCE_LOCATION))
@@ -181,7 +160,7 @@ class Profile(Base):
         time.sleep(1)
 
 
-    def setMonth(self, value):
+    def setExpMonth(self, value):
 
         monthSelect = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._EXPERIENCE_MONTH))
@@ -191,7 +170,7 @@ class Profile(Base):
         time.sleep(1)
 
 
-    def setYear(self, value):
+    def setExpYear(self, value):
 
         yearSelect = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._EXPERIENCE_YEAR))
@@ -201,7 +180,76 @@ class Profile(Base):
         time.sleep(1)
 
 
-    def setDescription(self, value):
+    def setExpDescription(self, value):
+
+        descriptionField =  WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._EXPERIENCE_DESCRIPTION))
+        )
+
+        self._sendKeys(descriptionField, value)
+        time.sleep(1)
+
+
+    def setVolOrganization(self, value):
+
+        organizationField =  WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._VOLUNTEER_ORGANIZATION))
+        )
+
+        self._sendKeys(organizationField, value)
+        time.sleep(1)
+
+
+    def setVolRole(self, value):
+
+        roleField =  WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._VOLUNTEER_ROLE))
+        )
+
+        self._sendKeys(roleField, value)
+        time.sleep(1)
+
+
+    def setVolCause(self, value):
+
+        cause = WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._VOLUNTEER_CAUSE))
+        )
+
+        Select(cause).select_by_visible_text(value)
+        time.sleep(1)
+
+
+    def setVolMonth(self, value):
+
+        month = WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._VOLUNTEER_START_MONTH))
+        )
+
+        Select(month).select_by_visible_text(value)
+        time.sleep(1)
+
+
+    def setVolYear(self, value):
+
+        year = WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._VOLUNTEER_START_YEAR))
+        )
+
+        Select(year).select_by_visible_text(value)
+        time.sleep(1)
+
+
+    def setVolCurrWork(self, value):
+
+        checkbox = WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._VOLUNTEER_CURRENTLY_WORKING))
+        )
+
+        checkbox.click()
+
+        
+    def setVolDescription(self, value):
 
         descriptionField =  WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._EXPERIENCE_DESCRIPTION))
