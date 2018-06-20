@@ -1,6 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
 
 class Base:
 
@@ -8,6 +11,9 @@ class Base:
     driver = webdriver.Chrome('/Users/Sho/Desktop/linkedin_test/chromedriver')
     longWait = 3
     shortWait = 1
+
+    _ME_LINK = (By.ID, 'nav-settings__dropdown-trigger')
+    _VIEW_PROFILE_BUTTON = (By.CLASS_NAME, 'button-tertiary-medium')
 
 
     def _returnInstance(self):
@@ -56,6 +62,24 @@ class Base:
         self.driver.close()
         print("Closing driver now...")
         self.driver.quit()
+
+
+    def open_ownProfile(self):
+
+        meButton = WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._ME_LINK))
+        )
+
+        meButton.click()
+        time.sleep(1)
+
+        viewProfileButton = WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._VIEW_PROFILE_BUTTON))
+        )
+
+        viewProfileButton.click()
+
+        return Profile()
 
 
 from messaging import Messaging
