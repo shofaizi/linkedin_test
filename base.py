@@ -65,7 +65,7 @@ class Base:
         self.driver.quit()
 
 
-    def open_ownProfile(self):
+    def expandProfileNavigator(self):
 
         meButton = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._ME_LINK))
@@ -73,6 +73,9 @@ class Base:
 
         meButton.click()
         time.sleep(1)
+
+
+    def open_ownProfile(self):
 
         viewProfileButton = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._VIEW_PROFILE_BUTTON))
@@ -85,11 +88,15 @@ class Base:
 
     def logOut(self):
 
+        self.expandProfileNavigator()
+
         logoutButton = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._LOGOUT_BUTTON))
         )
 
         logoutButton.click()
+
+        self.tearDown()
 
 
 from messaging import Messaging
