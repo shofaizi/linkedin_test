@@ -21,6 +21,7 @@ class Profile(Base):
     _EXPERIENCE_MONTH = (By.ID, 'position-start-month')
     _EXPERIENCE_YEAR = (By.ID, 'position-start-year')
     _EXPERIENCE_DESCRIPTION = (By.ID, 'position-description')
+    _EXPERIENCE_SAVE_BUTTON = (By.CLASS_NAME, 'form-submit-action')
 
     _VOLUNTEER_ORGANIZATION = (By.NAME, "companyName")
     _VOLUNTEER_ROLE = (By.NAME, "role")
@@ -28,11 +29,34 @@ class Profile(Base):
     _VOLUNTEER_START_MONTH = (By.ID, "volunteer-experience-start-month")
     _VOLUNTEER_START_YEAR = (By.ID, "volunteer-experience-start-year")
     _VOLUNTEER_CURRENTLY_WORKING = (By.ID, "volunteer-experience-currently-volunteers-here")
-    _VOLUNTEER_DESCRIPTION = (By.ID, "volunteer-experience-description")
+    _VOLUNTEER_DESCRIPTION = (By.NAME, "description")
 
 
 
     myProfileUrl = 'https://www.linkedin.com/in/shoaibfaizi/'
+
+    def getCheckbox(self):
+
+        inputList = self.driver.find_elements_by_tag_name('label')
+        checkbox = None
+
+        for input in inputList:
+            if input.get_attribute('for') == 'volunteer-experience-currently-volunteers-here':
+                checkbox = input
+
+        return checkbox
+
+
+    def saveExperience(self):
+
+        buttons = self.driver.find_elements_by_tag_name('button')
+        save = None
+
+        for button in buttons:
+            if button.get_attribute('class') == 'pe-form-footer__action--submit form-submit-action Sans-15px-white-100%':
+                save = button
+
+        self._clickSubmit(save)
 
 
     def connectUser(self, value):
@@ -126,7 +150,7 @@ class Profile(Base):
         self.driver.get('https://www.linkedin.com/in/shoaibfaizi/edit/position/new/')
 
 
-    def open_addAccomplishment(self, value):
+    def open_addVolunteerExperience(self):
 
         self.driver.get('https://www.linkedin.com/in/shoaibfaizi/edit/volunteer-experience/new/')
 
@@ -240,22 +264,21 @@ class Profile(Base):
         time.sleep(1)
 
 
-    def setVolCurrWork(self, value):
+    def setVolCurrWork(self):
 
-        checkbox = WebDriverWait(self.driver, self.longWait).until(
-            EC.visibility_of_element_located((self._VOLUNTEER_CURRENTLY_WORKING))
-        )
+        checkbox = self.getCheckbox()
 
         checkbox.click()
 
-        
+
     def setVolDescription(self, value):
 
-        descriptionField =  WebDriverWait(self.driver, self.longWait).until(
-            EC.visibility_of_element_located((self._EXPERIENCE_DESCRIPTION))
-        )
+        descriptionFields =  self.driver.find_elements_by_tag_name('textarea')
+        description = None
 
-        self._sendKeys(descriptionField, value)
+        if len(descriptionFields) == 1:
+            self._sendKeys(descriptionFields[0], value)
+        # self._sendKeys(descriptionField, value)
         time.sleep(1)
 
 

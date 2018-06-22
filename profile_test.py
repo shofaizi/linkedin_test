@@ -1,6 +1,7 @@
 from loginPage import LoginPage
 from credentials import USER_EMAIL, USER_PASS
 from text import expDescription, volDescription
+import time
 
 
 def profile_test():
@@ -13,16 +14,20 @@ def profile_test():
 
     homePage = loginPage.setUserPass(USER_PASS)
 
+    # add experience
     profile = homePage.open_ownProfile()
     profile.open_addExperience()
     profile.setExpTitle("Software Developer")
     profile.setExpCompany("Traction On Demand")
     profile.setExpLocation("Vancouver, Canada Area")
-    profile.setExpMonth("July")
+    profile.setExpMonth("June")
     profile.setExpYear("2018")
     profile.setExpDescription(expDescription)
-    # save
-    profile.open_addAccomplishment()
+    profile.saveExperience()
+
+    # add volunteer work
+    time.sleep(3)
+    profile.open_addVolunteerExperience()
     profile.setVolOrganization("Planet B")
     profile.setVolRole("Software Developer")
     profile.setVolCause("Science and Technology")
@@ -30,7 +35,7 @@ def profile_test():
     profile.setVolYear("2018")
     profile.setVolCurrWork()
     profile.setVolDescription(volDescription)
-    # save
+    profile.saveExperience()
 
 
 profile_test()

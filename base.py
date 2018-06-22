@@ -9,11 +9,12 @@ class Base:
 
     url = "http://www.linkedin.com"
     driver = webdriver.Chrome('/Users/Sho/Desktop/linkedin_test/chromedriver')
-    longWait = 3
+    longWait = 5
     shortWait = 1
 
     _ME_LINK = (By.ID, 'nav-settings__dropdown-trigger')
     _VIEW_PROFILE_BUTTON = (By.CLASS_NAME, 'button-tertiary-medium')
+    _LOGOUT_BUTTON = (By.LINK_TEXT, 'Sign out')
 
 
     def _returnInstance(self):
@@ -80,6 +81,15 @@ class Base:
         viewProfileButton.click()
 
         return Profile()
+
+
+    def logOut(self):
+
+        logoutButton = WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._LOGOUT_BUTTON))
+        )
+
+        logoutButton.click()
 
 
 from messaging import Messaging

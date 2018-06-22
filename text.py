@@ -11,7 +11,7 @@ expDescription = 'Develop web-based applications and interfaces in utilizing MVC
 volDescription = 'Planet B is an innovative online platform, we combine ecommerce with crowdfunding to increase capital ' \
                  'for social and environmental initiatives. \n' \
                  'I volunteer as a software developer and help translate designs into user interfaces. \n' \
-                 "The mission is to encourage online shoppers to think twice about the product they're buying and how it" \
+                 "The mission is to encourage online shoppers to think twice about the product they're buying and how it " \
                  "it will affect the world around us. \n" \
-                 "Planet B will help fund initiatives by taking a portion of the product's price and contribute to good causes" \
+                 "Planet B will help fund initiatives by taking a portion of the product's price and contribute to good causes " \
                  "suggested by the buyer or Planet B"
