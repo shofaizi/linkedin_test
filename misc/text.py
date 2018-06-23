@@ -15,3 +15,6 @@ volDescription = 'Planet B is an innovative online platform, we combine ecommerc
                  "it will affect the world around us. \n" \
                  "Planet B will help fund initiatives by taking a portion of the product's price and contribute to good causes " \
                  "suggested by the buyer or Planet B"
+
+
+post = "My very first post using Selenium framework with Python!!"

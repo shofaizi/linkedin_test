@@ -1,5 +1,5 @@
-from base import Base
 import time
+from pages.base import Base
 
 
 class Network(Base):

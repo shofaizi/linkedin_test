@@ -1,5 +1,5 @@
-from loginPage import LoginPage
-from credentials import USER_EMAIL, USER_PASS
+from misc.credentials import USER_EMAIL, USER_PASS
+from pages.loginPage import LoginPage
 
 note = "Hello, my name is Shoaib Faizi and I am developing an automated test suite " \
        "to make sure Linkedin's features work right. Have a good day."

@@ -1,9 +1,11 @@
-from base import Base
 import time
+
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait
+from pages.base import Base
+
 
 class Profile(Base):
 
@@ -32,8 +34,8 @@ class Profile(Base):
     _VOLUNTEER_DESCRIPTION = (By.NAME, "description")
 
 
-
     myProfileUrl = 'https://www.linkedin.com/in/shoaibfaizi/'
+
 
     def getCheckbox(self):
 
@@ -98,28 +100,20 @@ class Profile(Base):
 
 
     def getProfileDetails(self):
-        """
-        Note:
-            Gets all spans for a class and filters out the ones that match a given class name
 
-        Return:
-            String presenting the current work experience
-        """
-
-        spans = WebDriverWait(self.driver, self.longWait).until(
-            EC.visibility_of_all_elements_located((self._SPANS))
-        )
-
-        details = list(filter(lambda span: span.get_attribute('class') == 'pv-top-card-v2-sction__entity-name', spans))
-        print(details)
-        assert len(details) == 4
+        spansList = self.driver.find_elements_by_tag_name('span')
 
         detailsDict = {}
 
-        for detail in details:
-            detailsDict[detail.text] = detail.text
-
-        print(detailsDict)
+        for span in spansList:
+            if 'pv-top-card-v2-section__company-name' in span.get_attribute('class'):
+                detailsDict['company'] = span.text.strip()
+            elif 'pv-top-card-v2-section__school-name' in span.get_attribute('class'):
+                detailsDict['school'] = span.text.strip()
+            elif 'pv-top-card-v2-section__connections' in span.get_attribute('class'):
+                detailsDict['connections'] = int(span.text[17:-1].strip())
+            elif 'pv-recent-activity-section__follower-count-text' in span.get_attribute('class'):
+                detailsDict['followers'] = int(span.text[0:-9].strip())
 
 
     def getFullName(self):
@@ -145,12 +139,12 @@ class Profile(Base):
         expandButton.click()
 
 
-    def open_addExperience(self):
+    def openAddExperience(self):
 
         self.driver.get('https://www.linkedin.com/in/shoaibfaizi/edit/position/new/')
 
 
-    def open_addVolunteerExperience(self):
+    def openAddVolunteerExperience(self):
 
         self.driver.get('https://www.linkedin.com/in/shoaibfaizi/edit/volunteer-experience/new/')
 

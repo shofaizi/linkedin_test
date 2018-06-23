@@ -1,9 +1,11 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
 
 class Base:
 
@@ -25,12 +27,6 @@ class Base:
         elif "/mynetwork/" in self.driver.current_url:
             print("Returning network instance")
             return Network()
-        elif "/jobs/" in self.driver.current_url:
-            print("Returning jobs instance")
-            return Job()
-        elif "/messaging/" in self.driver.current_url:
-            print("Returning messaging instance")
-            return Messaging()
         elif "/in/" in self.driver.current_url:
             print("Returning profile instance")
             return Profile()
@@ -75,7 +71,7 @@ class Base:
         time.sleep(1)
 
 
-    def open_ownProfile(self):
+    def openOwnProfile(self):
 
         viewProfileButton = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._VIEW_PROFILE_BUTTON))
@@ -99,9 +95,7 @@ class Base:
         self.tearDown()
 
 
-from messaging import Messaging
-from network import Network
-from job import Job
-from home import Home
-from profile import Profile
-from result import Result
+from pages.network import Network
+from pages.home import Home
+from pages.profile import Profile
+from pages.result import Result
