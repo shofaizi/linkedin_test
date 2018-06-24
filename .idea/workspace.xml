@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f057d4e-d8ae-45cd-a8d5-9117b7078ab3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sharePost_test.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/job.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/messaging.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/base.py" afterPath="$PROJECT_DIR$/pages/base.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/home.py" afterPath="$PROJECT_DIR$/pages/home.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/loginPage.py" afterPath="$PROJECT_DIR$/pages/loginPage.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/network.py" afterPath="$PROJECT_DIR$/pages/network.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/profile.py" afterPath="$PROJECT_DIR$/pages/profile.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/result.py" afterPath="$PROJECT_DIR$/pages/result.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/text.py" afterPath="$PROJECT_DIR$/misc/text.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/linkedin_test.py" afterPath="$PROJECT_DIR$/linkedin_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile_test.py" afterPath="$PROJECT_DIR$/profile_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/misc/text.py" afterPath="$PROJECT_DIR$/misc/text.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/base.py" afterPath="$PROJECT_DIR$/pages/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/home.py" afterPath="$PROJECT_DIR$/pages/home.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/profile.py" afterPath="$PROJECT_DIR$/pages/profile.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,59 +17,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="loginPage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/loginPage.py">
+      <file leaf-file-name="linkedin_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/linkedin_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state relative-caret-position="-23">
+              <caret line="2" column="64" lean-forward="false" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
+                <marker date="1529824285000" expanded="true" signature="1927:2273" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="text.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/misc/text.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="69" column="37" lean-forward="true" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#1400#1415#0" expanded="false" />
+                <element signature="e#1586#1671#0" expanded="false" />
+                <element signature="e#1942#2155#0" expanded="false" />
+                <element signature="e#2189#2424#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/profile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="3" column="64" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#1608#1876#0" expanded="false" />
-                <element signature="e#1918#2212#0" expanded="false" />
-                <element signature="e#2998#3492#0" expanded="false" />
-                <element signature="e#4314#4629#0" expanded="false" />
-                <element signature="e#4674#4849#0" expanded="false" />
-                <element signature="e#4894#4971#0" expanded="false" />
-                <element signature="e#5025#5114#0" expanded="false" />
-                <element signature="e#5160#5345#0" expanded="false" />
-                <element signature="e#5393#5606#0" expanded="false" />
-                <element signature="e#5655#5871#0" expanded="false" />
-                <element signature="e#5917#6141#0" expanded="false" />
-                <element signature="e#6186#6407#0" expanded="false" />
-                <element signature="e#6459#6685#0" expanded="false" />
-                <element signature="e#6738#6966#0" expanded="false" />
-                <element signature="e#7011#7215#0" expanded="false" />
-                <element signature="e#7261#7472#0" expanded="false" />
-                <element signature="e#7518#7735#0" expanded="false" />
-                <element signature="e#7780#7994#0" expanded="false" />
-                <element signature="e#8036#8091#0" expanded="false" />
-                <element signature="e#8143#8481#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/home.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
-              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-                <element signature="e#675#808#0" expanded="false" />
-                <marker date="1529788057000" expanded="false" signature="836:1215" ph="..." />
-              </folding>
+            <state relative-caret-position="631">
+              <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,6 +79,20 @@
       <find>ember4919</find>
       <find>open_ownProfile</find>
       <find>`</find>
+      <find>_BUTTON_MESSAGING</find>
+      <find>_BUTTON_NETWORK</find>
+      <find>_SEARCH_INPUT</find>
+      <find>_BUTTON_PROFILE</find>
+      <find>_BUTTON_NOTE</find>
+      <find>_BUTTON_SEND_INVITE</find>
+      <find>_NOTE_FIELD</find>
+      <find>viewProfile</find>
+      <find>_H1</find>
+      <find>_ANCHOR_TAGS</find>
+      <find>_ME_LINK</find>
+      <find>_VIEW_PROFILE_BUTTON</find>
+      <find>saveExperience</find>
+      <find>connectUser</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -115,16 +112,17 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/base.py" />
         <option value="$PROJECT_DIR$/profile.py" />
-        <option value="$PROJECT_DIR$/profile_test.py" />
         <option value="$PROJECT_DIR$/home.py" />
         <option value="$PROJECT_DIR$/pages/network.py" />
-        <option value="$PROJECT_DIR$/pages/profile.py" />
         <option value="$PROJECT_DIR$/pages/result.py" />
         <option value="$PROJECT_DIR$/pages/loginPage.py" />
+        <option value="$PROJECT_DIR$/sharePost_test.py" />
+        <option value="$PROJECT_DIR$/profile_test.py" />
+        <option value="$PROJECT_DIR$/pages/home.py" />
         <option value="$PROJECT_DIR$/pages/base.py" />
         <option value="$PROJECT_DIR$/misc/text.py" />
-        <option value="$PROJECT_DIR$/sharePost_test.py" />
-        <option value="$PROJECT_DIR$/pages/home.py" />
+        <option value="$PROJECT_DIR$/pages/profile.py" />
+        <option value="$PROJECT_DIR$/linkedin_test.py" />
       </list>
     </option>
   </component>
@@ -336,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529630644923</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="allow user to share a post&#10;moved files into their respective folders&#10;cleaned up code (white spaces)">
+      <created>1529788099994</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1529788099994</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -376,11 +381,12 @@
     <MESSAGE value="allow user to add volunteer experience to profile" />
     <MESSAGE value="refactor open_ownProfile and break it down into its own function" />
     <MESSAGE value="update gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="update gitignore" />
+    <MESSAGE value="allow user to share a post&#10;moved files into their respective folders&#10;cleaned up code (white spaces)" />
+    <option name="LAST_COMMIT_MESSAGE" value="allow user to share a post&#10;moved files into their respective folders&#10;cleaned up code (white spaces)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -449,32 +455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profile_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="33" lean-forward="true" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/result.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -491,99 +471,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/base.py">
+    <entry file="file://$PROJECT_DIR$/sharePost_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="100" column="22" lean-forward="true" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#1194#1281#0" expanded="false" />
-            <element signature="e#1330#1345#0" expanded="false" />
-            <element signature="e#1378#1478#0" expanded="false" />
-            <element signature="e#1514#1599#0" expanded="false" />
-            <element signature="e#1649#1828#0" expanded="false" />
-            <element signature="e#1870#2083#0" expanded="false" />
-            <element signature="e#2117#2352#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linkedin_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/misc/text.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        <state relative-caret-position="135">
+          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sharePost_test.py">
+    <entry file="file://$PROJECT_DIR$/pages/result.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        <state relative-caret-position="90">
+          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
           <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/profile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="64" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#1608#1876#0" expanded="false" />
-            <element signature="e#1918#2212#0" expanded="false" />
-            <element signature="e#2998#3492#0" expanded="false" />
-            <element signature="e#4314#4629#0" expanded="false" />
-            <element signature="e#4674#4849#0" expanded="false" />
-            <element signature="e#4894#4971#0" expanded="false" />
-            <element signature="e#5025#5114#0" expanded="false" />
-            <element signature="e#5160#5345#0" expanded="false" />
-            <element signature="e#5393#5606#0" expanded="false" />
-            <element signature="e#5655#5871#0" expanded="false" />
-            <element signature="e#5917#6141#0" expanded="false" />
-            <element signature="e#6186#6407#0" expanded="false" />
-            <element signature="e#6459#6685#0" expanded="false" />
-            <element signature="e#6738#6966#0" expanded="false" />
-            <element signature="e#7011#7215#0" expanded="false" />
-            <element signature="e#7261#7472#0" expanded="false" />
-            <element signature="e#7518#7735#0" expanded="false" />
-            <element signature="e#7780#7994#0" expanded="false" />
-            <element signature="e#8036#8091#0" expanded="false" />
-            <element signature="e#8143#8481#0" expanded="false" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/loginPage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        <state relative-caret-position="295">
+          <caret line="29" column="24" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/linkedin_test/lib/python3.6/site-packages/selenium/webdriver/support/expected_conditions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="201" column="8" lean-forward="false" selection-start-line="201" selection-start-column="8" selection-end-line="201" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/home.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="32">
+          <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-            <element signature="e#675#808#0" expanded="false" />
-            <marker date="1529788057000" expanded="false" signature="836:1215" ph="..." />
+            <marker date="1529820849000" expanded="true" signature="511:850" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/misc/text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="69" column="37" lean-forward="true" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#1400#1415#0" expanded="false" />
+            <element signature="e#1586#1671#0" expanded="false" />
+            <element signature="e#1942#2155#0" expanded="false" />
+            <element signature="e#2189#2424#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linkedin_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="2" column="64" lean-forward="false" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
+          <folding>
+            <marker date="1529824285000" expanded="true" signature="1927:2273" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/profile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="75" column="31" lean-forward="true" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

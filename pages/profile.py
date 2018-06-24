@@ -1,10 +1,9 @@
-import time
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from pages.base import Base
+import time
 
 
 class Profile(Base):
@@ -12,8 +11,11 @@ class Profile(Base):
     _SPANS = (By.TAG_NAME, 'span')
     _H1 = (By.TAG_NAME, 'h1')
     _BUTTONS = (By.TAG_NAME, 'button')
+    _LABELS = (By.TAG_NAME, 'label')
+    _TEXT_AREA = (By.TAG_NAME, 'textarea')
+    _PENDING_STATUS = (By.CLASS_NAME, 'pv-s-profile-actions__label')
+
     _EXPAND_BIO_BUTTON = (By.CLASS_NAME, 'pv-profile-section__card-action-bar')
-    _ANCHOR_TAGS = (By.TAG_NAME, 'a')
     _ME_LINK = (By.ID, 'nav-settings__dropdown-trigger')
     _VIEW_PROFILE_BUTTON = (By.CLASS_NAME, 'button-tertiary-medium')
 
@@ -37,9 +39,18 @@ class Profile(Base):
     myProfileUrl = 'https://www.linkedin.com/in/shoaibfaizi/'
 
 
+    def getInvitationStatus(self):
+
+        spans = self.driver.find_elements(*self._SPANS)
+        spansList = list(filter(lambda span: span.text == 'Pending', spans))
+
+        assert len(spansList) == 1
+        return spansList[0].text
+
+
     def getCheckbox(self):
 
-        inputList = self.driver.find_elements_by_tag_name('label')
+        inputList = self.driver.find_elements(*self._LABELS)
         checkbox = None
 
         for input in inputList:
@@ -50,8 +61,12 @@ class Profile(Base):
 
 
     def saveExperience(self):
+        """
+        Purpose:
+            Saves form for adding volunteer or work experience
+        """
 
-        buttons = self.driver.find_elements_by_tag_name('button')
+        buttons = self.driver.find_elements(*self._BUTTONS)
         save = None
 
         for button in buttons:
@@ -61,7 +76,11 @@ class Profile(Base):
         self._clickSubmit(save)
 
 
-    def connectUser(self, value):
+    def connectUser(self, messageStr):
+        """
+        Purpose:
+            Connect with user by composing a message and sending out an invitation
+        """
 
         time.sleep(2)
 
@@ -71,12 +90,12 @@ class Profile(Base):
 
         time.sleep(2)
         note = self.driver.find_element_by_class_name('send-invite__actions')
-        noteWrapper = note.find_elements_by_tag_name("button")
+        noteWrapper = note.find_elements(*self._BUTTONS)
         noteWrapper[0].click()
 
         # compose message
         message = self.driver.find_element_by_name('message')
-        message.send_keys(value)
+        message.send_keys(messageStr)
 
         # send invitation
         # sendButton = self.driver.find_element_by_class_name('button-primary-large')
@@ -94,14 +113,21 @@ class Profile(Base):
         """
 
         div = self.driver.find_element_by_class_name('pv-top-card-v2-section__actions')
-        button = div.find_elements_by_tag_name('button')[0]
+        button = div.find_elements(*self._BUTTONS)[0]
         span = button.find_elements_by_class_name('pv-s-profile-actions__label')
         return span.text
 
 
     def getProfileDetails(self):
+        """
+        Purpose:
+            Gets all details such as school name, work experience, followers and connections.
 
-        spansList = self.driver.find_elements_by_tag_name('span')
+        Return:
+            {} object with values 'company', 'school', 'connections', 'followers'
+        """
+
+        spansList = self.driver.find_elements(*self._SPANS)
 
         detailsDict = {}
 
@@ -117,6 +143,13 @@ class Profile(Base):
 
 
     def getFullName(self):
+        """
+        Purpose:
+            Asserts for existance of user and returns it
+
+        Return:
+            String
+        """
 
         h1 = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_all_elements_located((self._H1))
@@ -130,7 +163,10 @@ class Profile(Base):
 
 
     def expandBioSection(self):
-
+        """
+        Purpose:
+            Expands bio section
+        """
 
         expandButton = WebDriverWait(self.driver, self.longWait).until(
             EC.visibility_of_element_located((self._EXPAND_BIO_BUTTON))
@@ -140,15 +176,32 @@ class Profile(Base):
 
 
     def openAddExperience(self):
+        """
+        Purpose:
+            To open work experience form
+
+        TODO:
+            Open form without opening page with URL.
+            Suggestion: Find element and click on achievements list
+        """
 
         self.driver.get('https://www.linkedin.com/in/shoaibfaizi/edit/position/new/')
 
 
     def openAddVolunteerExperience(self):
+        """
+        Purpose:
+            To open volunteer experience form
+
+        TODO:
+            Open form without opening page with URL.
+            Suggestion: Find element and click on achievements list
+        """
 
         self.driver.get('https://www.linkedin.com/in/shoaibfaizi/edit/volunteer-experience/new/')
 
 
+    # SETTING VALUES HERE
     def setExpTitle(self, value):
 
         titleField = WebDriverWait(self.driver, self.longWait).until(
@@ -267,14 +320,9 @@ class Profile(Base):
 
     def setVolDescription(self, value):
 
-        descriptionFields =  self.driver.find_elements_by_tag_name('textarea')
+        descriptionFields =  self.driver.find_elements(*self._TEXT_AREA)
         description = None
 
         if len(descriptionFields) == 1:
             self._sendKeys(descriptionFields[0], value)
-        # self._sendKeys(descriptionField, value)
         time.sleep(1)
-
-
-    # def saveExperienceForm(self):
-    #     data-is-animating-click

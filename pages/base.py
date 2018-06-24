@@ -19,6 +19,12 @@ class Base:
     _LOGOUT_BUTTON = (By.LINK_TEXT, 'Sign out')
 
 
+
+    def _getPageUrl(self):
+
+        return self.driver.current_url
+
+
     def _returnInstance(self):
 
         if "/feed/" in self.driver.current_url:
@@ -51,7 +57,7 @@ class Base:
 
         print("Opening :", self.url)
         self.driver.get(self.url)
-        self.driver.maximize_window()
+        # self.driver.maximize_window()
 
 
     def tearDown(self):
