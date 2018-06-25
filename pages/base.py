@@ -30,7 +30,7 @@ class Base:
         )
 
         homePageBtn.click()
-        time.sleep(1)
+        time.sleep(3)
         return self._returnInstance()
 
 
@@ -57,7 +57,6 @@ class Base:
 
 
     def _returnInstance(self):
-
         if "/feed/" in self.driver.current_url:
             print("URL: ", self.driver.current_url)
             print("Returning home instance")
