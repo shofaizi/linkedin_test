@@ -11,32 +11,67 @@ class Base:
 
     url = "http://www.linkedin.com"
     driver = webdriver.Chrome('/Users/Sho/Desktop/linkedin_test/chromedriver')
-    longWait = 5
+    longWait = 3
     shortWait = 1
 
     _ME_LINK = (By.ID, 'nav-settings__dropdown-trigger')
     _VIEW_PROFILE_BUTTON = (By.CLASS_NAME, 'button-tertiary-medium')
     _LOGOUT_BUTTON = (By.LINK_TEXT, 'Sign out')
+    _HOME_LINK = (By.ID, 'feed-tab-icon')
 
 
+    def goToHomePage(self):
+        """
+        Purpose: Navigate to homepage and return instance
+        """
 
-    def _getPageUrl(self):
+        homePageBtn = WebDriverWait(self.driver, self.longWait).until(
+            EC.visibility_of_element_located((self._HOME_LINK))
+        )
 
+        homePageBtn.click()
+        time.sleep(1)
+        return self._returnInstance()
+
+
+    def getTradeMark(self):
+        """
+        Purpose: Used as a static test method
+        """
+
+        spanList = self.driver.find_elements_by_tag_name('span')
+        span = None
+
+        for span in spanList:
+            if span.text == 'LinkedIn Corporation © 2018':
+                span = span
+
+        if span is not None:
+            return True
+
+
+    def getPageUrl(self):
+
+        time.sleep(2)
         return self.driver.current_url
 
 
     def _returnInstance(self):
 
         if "/feed/" in self.driver.current_url:
+            print("URL: ", self.driver.current_url)
             print("Returning home instance")
             return Home()
-        elif "/mynetwork/" in self.driver.current_url:
-            print("Returning network instance")
-            return Network()
         elif "/in/" in self.driver.current_url:
+            print("URL: ", self.driver.current_url)
             print("Returning profile instance")
             return Profile()
+        elif "/mynetwork/" or "/mynetwork/invite-sent/" or  "/search/results/" in self.driver.current_url:
+            print("URL: ", self.driver.current_url)
+            print("Returning network instance")
+            return Network()
         elif "/search/results/" in self.driver.current_url:
+            print("URL: ", self.driver.current_url)
             print("Returning result instance")
             return Result()
 
@@ -57,7 +92,6 @@ class Base:
 
         print("Opening :", self.url)
         self.driver.get(self.url)
-        # self.driver.maximize_window()
 
 
     def tearDown(self):

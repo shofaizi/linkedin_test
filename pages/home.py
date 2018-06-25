@@ -20,22 +20,6 @@ class Home(Base):
         return Result()
 
 
-
-
-    # def connectUser(self, value):
-    #
-    #     time.sleep(3)
-    #
-    #     userLink = self.driver.find_element_by_class_name('search-result__result-link')
-    #     userLink.click()
-    #     return Profile()
-
-
-    # def submitLogin(self):
-    #     self._clickSubmit((self._LOGIN_SUBMIT))
-    #     return self._returnInstance()
-
-
     def sharePost(self, value):
         """
         Purpose:

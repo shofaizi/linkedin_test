@@ -98,11 +98,15 @@ class Profile(Base):
         message.send_keys(messageStr)
 
         # send invitation
-        # sendButton = self.driver.find_element_by_class_name('button-primary-large')
-        # sendButton.click()
-        noteWrapper[1].click()
+        buttonsList = self.driver.find_elements(*self._BUTTONS)
+        assert len(buttonsList) >= 1
+
+        for button in buttonsList:
+            if button.text == 'Send invitation':
+                button.click()
+
         time.sleep(2)
-        self._returnInstance()
+        return self._returnInstance()
 
 
     def getInvitationResult(self):
@@ -124,9 +128,13 @@ class Profile(Base):
             Gets all details such as school name, work experience, followers and connections.
 
         Return:
-            {} object with values 'company', 'school', 'connections', 'followers'
+            {} object with values 'company', 'school', 'connections'
+
+        TODO:
+            Find followers element and return it part of the object
         """
 
+        time.sleep(2)
         spansList = self.driver.find_elements(*self._SPANS)
 
         detailsDict = {}
@@ -138,8 +146,10 @@ class Profile(Base):
                 detailsDict['school'] = span.text.strip()
             elif 'pv-top-card-v2-section__connections' in span.get_attribute('class'):
                 detailsDict['connections'] = int(span.text[17:-1].strip())
-            elif 'pv-recent-activity-section__follower-count-text' in span.get_attribute('class'):
-                detailsDict['followers'] = int(span.text[0:-9].strip())
+            # elif 'pv-recent-activity-section__follower-count-text' in span.get_attribute('class'):
+            #     detailsDict['followers'] = int(span.text[0:-9].strip())
+
+        return detailsDict
 
 
     def getFullName(self):
@@ -321,7 +331,7 @@ class Profile(Base):
     def setVolDescription(self, value):
 
         descriptionFields =  self.driver.find_elements(*self._TEXT_AREA)
-        description = None
+        # description = None
 
         if len(descriptionFields) == 1:
             self._sendKeys(descriptionFields[0], value)

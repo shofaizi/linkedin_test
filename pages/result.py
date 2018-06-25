@@ -1,5 +1,6 @@
 import time
 from pages.base import Base
+from pages.profile import Profile
 
 
 class Result(Base):
@@ -10,4 +11,5 @@ class Result(Base):
         userLink = self.driver.find_element_by_class_name('search-result__result-link')
         userLink.click()
         time.sleep(2)
-        return self._returnInstance()
+        # return self._returnInstance()
+        return Profile()
