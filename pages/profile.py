@@ -82,13 +82,13 @@ class Profile(Base):
             Connect with user by composing a message and sending out an invitation
         """
 
-        time.sleep(2)
+        time.sleep(1)
 
         # click on connect button
         button = self.driver.find_element_by_class_name('button-primary-large')
         button.click()
 
-        time.sleep(2)
+        time.sleep(1)
         note = self.driver.find_element_by_class_name('send-invite__actions')
         noteWrapper = note.find_elements(*self._BUTTONS)
         noteWrapper[0].click()

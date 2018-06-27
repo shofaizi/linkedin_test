@@ -14,6 +14,7 @@ def linkedIn_testSuite():
         Implemented test types: Functional, Static, Links tests
     """
 
+
     # log into Linkedin
     loginPage = LoginPage()
     loginPage.setUp()
@@ -21,7 +22,6 @@ def linkedIn_testSuite():
     homePage = loginPage.setUserPass(USER_PASS)
 
     assert homePage.getPageUrl() == 'https://www.linkedin.com/feed/'
-    assert homePage.getTradeMark()
 
     # search up user and connect
     resultPage = homePage.searchUser("Alison Dsa")
@@ -76,9 +76,12 @@ def linkedIn_testSuite():
     homePage = profilePage.goToHomePage()
     assert homePage.getPageUrl() == 'https://www.linkedin.com/feed/'
     homePage.sharePost(post)
+    assert homePage.getTradeMark()
 
     # log out and close driver
     homePage.logOut()
     homePage.tearDown()
+
+
 
 linkedIn_testSuite()

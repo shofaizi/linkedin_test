@@ -1,0 +1,23 @@
+###
+Author: Shoaib Faizi
+Date: June 26, 2018
+Title: Python & Selenium LinkedIn Test
+Version: 1.0.0
+###
+
+###
+Purpose:
+
+To test LinkedIn's functionality and behaviour by asserting commands and predicting the outcome of an
+action. Uses Selenium, the Chrome Web Driver and Python to build objects.
+This infrastructure follows the Page Object Model (POM) design to maintain and scale better.
+User Interface (UI) Map is a mechanism that stores all the locators for a test suite in one place for easy modification
+when identifiers or paths to UI elements change in the application under test (AUT).
+###
+
+###
+TODO:
+    1. Optimize speed and improve time complexity
+    2. Find a better way to locate with dynamic elements
+    3. Implement/extend pages: Messaging, Network, Privacy, Jobs
+###

@@ -30,7 +30,7 @@ class Base:
         )
 
         homePageBtn.click()
-        time.sleep(3)
+        time.sleep(2)
         return self._returnInstance()
 
 
@@ -43,16 +43,22 @@ class Base:
         span = None
 
         for span in spanList:
+            print(span)
             if span.text == 'LinkedIn Corporation © 2018':
                 span = span
 
         if span is not None:
             return True
 
+        # filteredSpans = list(filter(lambda span: span.text == 'LinkedIn Corporation © 2018', spanList))
+        # print(filteredSpans)
+        # if filteredSpans[0] is not None:
+        #     return True
+
 
     def getPageUrl(self):
 
-        time.sleep(2)
+        time.sleep(1)
         return self.driver.current_url
 
 

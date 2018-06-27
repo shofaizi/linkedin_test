@@ -21,5 +21,5 @@ class Network(Base):
 
         if viewProfile is not None:
             viewProfile.click()
-            time.sleep(3)
+            time.sleep(2)
             return self._returnInstance()
